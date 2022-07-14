@@ -24,3 +24,30 @@ function drawCircle(c: Circle) {
 function mousePressed() {
   redraw();
 }
+
+/*function calculatePackedCircles():Circle[]{
+
+	validatedCircles = empty list of circles
+	
+	repeat 1000 times
+	
+			candidate = generate a circle with random position and radius within window width and height values
+	
+			if candidate does not overlap with any circle of validatedCircles
+	
+			    add candidate to validatedCircles
+	
+			else
+	
+			    do nothing (we will not use this candidate)
+	
+	return validatedCircles
+}*/
+
+function calculatePackedCircles(): Circle[]{
+  let validatedCircles : Circle[]= []
+
+  circle(random(0,windowWidth), random(0,))
+
+
+}
