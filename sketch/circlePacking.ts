@@ -15,7 +15,34 @@ function calculatePackedCircles(areaWidth: number, areaHeight: number): Circle[]
         { pos: { x: random(0, areaWidth), y: random(0, areaHeight) }, radius: 40 },
     ];
 }
-
+    let validatedCircles : Circle[]= []
+  
+    for (let i: number=0; i<1000; i++){
+      const c = {radius: random(2.5,50), 
+      pos: {x:random(0, windowWidth), y: random(0, windowHeight)}}
+  
+    
+     // let candidate = circle(random(0,windowWidth), random(0, windowHeight), random(5,100))
+      if (validatedCircles.length === 0){
+        validatedCircles.push(c)
+        drawCircle(c)
+      }
+      else{
+          for (let item of validatedCircles){
+            let distCircles = dist(item.pos.x, item.pos.y, c.pos.x, c.pos.y);
+            let radii = c.radius + item.radius;
+            if (distCircles>radii){
+              drawCircle(c)
+              validatedCircles.push(c)
+            }
+  
+          }
+  
+          }
+        
+      }
+  
+}  
 /** Returns the distance between two given positions.
     This function doesn't require p5.js 
  */
